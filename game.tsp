@@ -82,7 +82,7 @@ for true do
             end
         end
         p inc
-    end
+    end drop
 
     board 0 read -> first_row
     board 1 read -> second_row
@@ -155,7 +155,7 @@ for true do
         false assert "unreachable"
     end
     
-    count 1 + -> count
+    count inc -> count
 end
 
 
