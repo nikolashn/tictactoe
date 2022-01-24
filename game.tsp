@@ -11,6 +11,8 @@ len -> length
 1 -> user
 1 -> count
 
+"type `quit` to quit." print
+
 for true do
     if count 2 % 0 == do
         1 -> user
@@ -117,7 +119,11 @@ for true do
         end
     end
 
-
+    if user 2 == do
+        "player ○ turn >> " puts
+    else
+        "player × turn >> " puts
+    end
     input -> input_value
     if input_value "quit" == do
         break
