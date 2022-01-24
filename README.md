@@ -1,5 +1,8 @@
+<div align="center">
 
 # TicTacToe Game in T#
+
+</div>
 
 
 ```
