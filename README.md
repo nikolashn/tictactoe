@@ -9,14 +9,14 @@
 
 
 ## Usage
+
+### Build T# language
 ```
-build language
-↓
 $ git clone https://github.com/Tsharp-lang/Tsharp
 $ cd tsharp
 $ go build main.go
 ```
-
+### Run
 ```
 $ ./main game.tsp
 ```
