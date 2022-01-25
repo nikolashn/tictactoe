@@ -1,9 +1,4 @@
 
-# A B C
-# D E F
-# G H I
-
-
 { { 0 0 0 } { 0 0 0 } { 0 0 0 } } dup
 len -> length
 -> board
