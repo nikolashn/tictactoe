@@ -22,8 +22,7 @@ for true do
 
     # print tic tac toe board
     "-------------" print
-    0 for dup length < do
-        -> i
+    0 for dup length < do -> i
         board i read -> board_2
         board_2 len -> board_2_length
         "| " puts
@@ -46,8 +45,7 @@ for true do
     end drop
 
     
-    0 for dup 3 < do
-        -> p
+    0 for dup 3 < do -> p
         board 0 read p read -> X
         board 1 read p read -> Y
         board 2 read p read -> Z
@@ -66,8 +64,7 @@ for true do
     end drop
 
     
-    0 for dup 3 < do
-        -> p
+    0 for dup 3 < do -> p
         board p read dup dup
         0 read -> X
         1 read -> Y
