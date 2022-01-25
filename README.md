@@ -8,15 +8,17 @@
 </div>
 
 
-# Usage
+## Usage
 ```
 build language
 ↓
-https://github.com/Tsharp-lang/Tsharp
+$ git clone https://github.com/Tsharp-lang/Tsharp
+$ cd tsharp
+$ go build main.go
 ```
 
 ```
-./main game.tsp
+$ ./main game.tsp
 ```
 
 ```
@@ -30,3 +32,6 @@ https://github.com/Tsharp-lang/Tsharp
 ```
 
 ![tictactoe](https://user-images.githubusercontent.com/81926489/150748213-382896a0-8570-44c6-aafa-614b7e30e3cd.gif)
+
+## Contributing
+Welcome! 💕
