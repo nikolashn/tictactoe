@@ -5,6 +5,8 @@
 [The T# programming language](https://github.com/Tsharp-lang/Tsharp) |
 [T# Docs](https://github.com/Tsharp-lang/Tsharp/blob/main/DOC/docs.md) |
 [T# Docs(日本語)](https://github.com/Tsharp-lang/Tsharp/blob/main/DOC/ドキュメント.md)
+
+[![made-with-T#](https://img.shields.io/badge/made%20with-Tsharp-blue.svg)](https://github.com/Tsharp-lang/Tsharp)
 </div>
 
 
