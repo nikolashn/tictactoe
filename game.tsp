@@ -20,7 +20,7 @@ block check_x_y_z do
             else
                 "X" -> player
             end
-            "player " puts player puts " won!" print
+            "player " print player print " won!\n" print
             exit
         end
     end
@@ -58,25 +58,25 @@ block check_win do
 end
 
 block print_board do
-    "-------------" print
+    "-------------\n" print
     0 for dup board_length < do -> i
         board i read -> board_2
         board_2 len -> board_2_length
-        "| " puts
+        "| " print
         0 for dup board_2_length < do -> n
             board_2 n read
             if dup 0 == do
-                " " puts
+                " " print
             elif dup 1 == do
-                "X" puts
+                "X" print
             elif dup 2 == do
-                "O" puts
+                "O" print
             end drop
-            " | " puts
+            " | " print
             n inc
         end drop
-        "" print
-        "-------------" print
+        "\n" print
+        "-------------\n" print
         i inc
     end drop
 end
@@ -108,17 +108,17 @@ block main do
             board 0 read -> replaced_board
             if input_value "A" == do
                 if 0 0 call invalid do
-                    "invalid board index" print exit
+                    "invalid board index\n" print exit
                 end
                 replaced_board player 0 replace
             elif input_value "B" == do
                 if 1 0 call invalid do
-                    "invalid board index" print exit
+                    "invalid board index\n" print exit
                 end
                 replaced_board player 1 replace
             elif input_value "C" == do
                 if 2 0 call invalid do
-                    "invalid board index" print exit
+                    "invalid board index\n" print exit
                 end
                 replaced_board player 2 replace
             end
@@ -127,17 +127,17 @@ block main do
             board 1 read -> replaced_board
             if input_value "D" == do
                 if 0 1 call invalid do
-                    "invalid board index" print exit
+                    "invalid board index\n" print exit
                 end
                 replaced_board player 0 replace
             elif input_value "E" == do
                 if 1 1 call invalid do
-                    "invalid board index" print exit
+                    "invalid board index\n" print exit
                 end
                 replaced_board player 1 replace
             elif input_value "F" == do
                 if 2 1 call invalid do
-                    "invalid board index" print exit
+                    "invalid board index\n" print exit
                 end
                 replaced_board player 2 replace
             end
@@ -146,23 +146,23 @@ block main do
             board 2 read -> replaced_board
             if input_value "G" == do
                 if 0 2 call invalid do
-                    "invalid board index" print exit
+                    "invalid board index\n" print exit
                 end
                 replaced_board player 0 replace
             elif input_value "H" == do
                 if 1 2 call invalid do
-                    "invalid board index" print exit
+                    "invalid board index\n" print exit
                 end
                 replaced_board player 1 replace
             elif input_value "I" == do
                 if 2 2 call invalid do
-                    "invalid board index" print exit
+                    "invalid board index\n" print exit
                 end
                 replaced_board player 2 replace
             end
             board replaced_board 2 replace -> board
         else
-            false assert "unreachable"
+            false assert "unreachable\n"
         end
 
         count inc -> count
