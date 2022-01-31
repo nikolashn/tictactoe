@@ -91,6 +91,7 @@ end
 block main do
     call init_board
     for true do
+        "\033[2;0H" print
         if count 2 % 0 == do
             1 -> player
         else
