@@ -129,7 +129,7 @@ block main do
                 2 -> index
             end
 
-			board row read -> replaced_board
+            board row read -> replaced_board
             if index row call invalid do
                 "invalid board index" print
                 break
@@ -137,7 +137,7 @@ block main do
 
             replaced_board player index replace
             count inc -> count
-			break
+            break
         end
         "\r\033[8A" print
     end
