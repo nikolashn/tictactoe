@@ -91,7 +91,6 @@ end
 block main do
     call init_board
     for true do
-        "\033[2;0H" print
         if count 2 % 0 == do
             1 -> player
         else
@@ -103,70 +102,44 @@ block main do
         call check_win
 
         input -> input_value
-        if input_value "quit" == do
-            break
-        elif input_value { "A" "B" "C" } in do
-            board 0 read -> replaced_board
-            if input_value "A" == do
-                if 0 0 call invalid do
-                    "invalid board index\n" print exit
-                end
-                replaced_board player 0 replace
-            elif input_value "B" == do
-                if 1 0 call invalid do
-                    "invalid board index\n" print exit
-                end
-                replaced_board player 1 replace
-            elif input_value "C" == do
-                if 2 0 call invalid do
-                    "invalid board index\n" print exit
-                end
-                replaced_board player 2 replace
+        "\033[2K\033[1A\033[2K\n" print
+        for true do
+            if input_value "quit" == do
+                exit
             end
-            board replaced_board 0 replace -> board
-        elif input_value { "D" "E" "F" } in do
-            board 1 read -> replaced_board
-            if input_value "D" == do
-                if 0 1 call invalid do
-                    "invalid board index\n" print exit
-                end
-                replaced_board player 0 replace
-            elif input_value "E" == do
-                if 1 1 call invalid do
-                    "invalid board index\n" print exit
-                end
-                replaced_board player 1 replace
-            elif input_value "F" == do
-                if 2 1 call invalid do
-                    "invalid board index\n" print exit
-                end
-                replaced_board player 2 replace
+            
+            if input_value { "A" "B" "C" } in do
+                0 -> row
+            elif input_value { "D" "E" "F" } in do
+                1 -> row
+            elif input_value { "G" "H" "I" } in do
+                2 -> row
+            else
+                "unreachable\r\033[1A" print
+                input -> input_value
+                "\033[2K\033[1A\033[2K\n" print
+                break
             end
-            board replaced_board 1 replace -> board
-        elif input_value { "G" "H" "I" } in do
-            board 2 read -> replaced_board
-            if input_value "G" == do
-                if 0 2 call invalid do
-                    "invalid board index\n" print exit
-                end
-                replaced_board player 0 replace
-            elif input_value "H" == do
-                if 1 2 call invalid do
-                    "invalid board index\n" print exit
-                end
-                replaced_board player 1 replace
-            elif input_value "I" == do
-                if 2 2 call invalid do
-                    "invalid board index\n" print exit
-                end
-                replaced_board player 2 replace
-            end
-            board replaced_board 2 replace -> board
-        else
-            false assert "unreachable\n"
-        end
 
-        count inc -> count
+            if input_value { "A" "D" "G" } in do
+                0 -> index
+            elif input_value { "B" "E" "H" } in do
+                1 -> index
+            elif input_value { "C" "F" "I" } in do
+                2 -> index
+            end
+
+            board row read -> replaced_board
+            if index row call invalid do
+                "invalid board index" print
+                break
+            end
+
+            replaced_board player index replace
+            count inc -> count
+            break
+        end
+        "\r\033[8A" print
     end
 end
 
