@@ -31,7 +31,7 @@ block check_win do
         board 0 read i read
         board 1 read i read
         board 2 read i read
-        call check_x_y_z
+        check_x_y_z
         i inc
     end drop
     
@@ -39,7 +39,7 @@ block check_win do
         board i read 0 read
         board i read 1 read
         board i read 2 read
-        call check_x_y_z
+        check_x_y_z
         i inc
     end drop
 
@@ -49,12 +49,12 @@ block check_win do
     row1 0 read
     row2 1 read
     row3 2 read
-    call check_x_y_z
+    check_x_y_z
 
     row1 2 read
     row2 1 read
     row3 0 read
-    call check_x_y_z
+    check_x_y_z
 end
 
 block print_board do
@@ -89,7 +89,7 @@ block invalid do
 end
 
 block main do
-    call init_board
+    init_board
     for true do
         if count 2 % 0 == do
             1 -> player
@@ -97,9 +97,9 @@ block main do
             2 -> player
         end
 
-        call print_board
+        print_board
 
-        call check_win
+        check_win
 
         input -> input_value
         "\033[2K\033[1A\033[2K\n" print
@@ -130,7 +130,7 @@ block main do
             end
 
             board row read -> replaced_board
-            if index row call invalid do
+            if index row invalid do
                 "invalid board index" print
                 break
             end
@@ -143,5 +143,5 @@ block main do
     end
 end
 
-call main
+main
 
