@@ -115,9 +115,7 @@ block main do
             elif input_value { "G" "H" "I" } in do
                 2 -> row
             else
-                "unreachable\r\033[1A" print
-                input -> input_value
-                "\033[2K\033[1A\033[2K\n" print
+                "unreachable" print
                 break
             end
 
