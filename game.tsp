@@ -27,13 +27,21 @@ block check_x_y_z do
 end
 
 block check_win do
+	1 -> is_game_continue
     0 for dup 3 < do -> i
         board 0 read i read
         board 1 read i read
         board 2 read i read
         check_x_y_z
+		board 0 read i read board 1 read i read * board 2 read i read *
+		-> is_game_continue
         i inc
     end drop
+
+	if is_game_continue 0 != do
+		"it's a draw!\n" print
+		exit
+	end
     
     0 for dup 3 < do -> i
         board i read 0 read
