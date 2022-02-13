@@ -1,8 +1,11 @@
 
 # global variables
-{ { 0 0 0 } { 0 0 0 } { 0 0 0 } } dup
-len -> board_length
--> board
+{
+    { 0 0 0 }
+    { 0 0 0 }
+    { 0 0 0 }
+} -> board
+board len -> board_length
 1 -> count
 
 block init_board do
