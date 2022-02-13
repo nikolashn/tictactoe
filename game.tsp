@@ -30,13 +30,21 @@ block check_x_y_z do
 end
 
 block check_win do
+	1 -> is_game_continue
     0 for dup 3 < do -> i
         board 0 read i read
         board 1 read i read
         board 2 read i read
         check_x_y_z
+		board 0 read i read board 1 read i read * board 2 read i read *
+		-> is_game_continue
         i inc
     end drop
+
+	if is_game_continue 0 != do
+		"it's a draw!\n" print
+		exit
+	end
     
     0 for dup 3 < do -> i
         board i read 0 read
@@ -118,9 +126,7 @@ block main do
             elif input_value { "G" "H" "I" } in do
                 2 -> row
             else
-                "unreachable\r\033[1A" print
-                input -> input_value
-                "\033[2K\033[1A\033[2K\n" print
+                "unreachable" print
                 break
             end
 
